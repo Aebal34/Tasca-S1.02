@@ -10,7 +10,17 @@ public class Sale {
 	//CONSTRUCTOR
 	
 	public Sale() {
-		
+		totalPrice = 0;
+		products = new ArrayList<Product>();
+	}
+	
+	//GETTERS
+	
+	public int getTotalPrice() {
+		return totalPrice;
+	}
+	public ArrayList<Product> getProducts(){
+		return products;
 	}
 	
 	//METHODS
