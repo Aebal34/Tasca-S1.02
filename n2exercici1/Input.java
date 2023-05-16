@@ -21,8 +21,8 @@ public class Input {
 			
 			}catch(InputMismatchException e) {
 				System.out.println("El tipo de dato introducido no es correcto.");
-				input.nextLine(); //We clean the buffer so we can introduce the data again.
 			}
+			input.nextLine(); //We clean the buffer so we can introduce the data again.
 		}while(!correct);
 			
 		return finalByte;
@@ -44,8 +44,8 @@ public class Input {
 			
 			}catch(InputMismatchException e) {
 				System.out.println("El tipo de dato introducido no es correcto.");
-				input.nextLine(); //We clean the buffer so we can introduce the data again.
 			}
+			input.nextLine(); //We clean the buffer so we can introduce the data again.
 		}while(!correct);
 			
 		return finalInt;
@@ -55,7 +55,7 @@ public class Input {
 	public static float readFloat(String message) {
 		
 		boolean correct = false;
-		float finalFloat = 0;
+		float finalFloat = 0.0f;
 		
 		//It will keep asking for a float until the type of data is correctly typed.
 		do {
@@ -67,36 +67,78 @@ public class Input {
 			
 			}catch(InputMismatchException e) {
 				System.out.println("El tipo de dato introducido no es correcto.");
-				input.nextLine(); //We clean the buffer so we can introduce the data again.
 			}
+			input.nextLine(); //We clean the buffer so we can introduce the data again.
 		}while(!correct);
 			
 		return finalFloat;
 	}
 	
 	//READ DOUBLE
-		public static double readDouble(String message) {
+	public static double readDouble(String message) {
+		
+		boolean correct = false;
+		double finalDouble = 0.0;
+		
+		//It will keep asking for a double until the type of data is correctly typed.
+		do {
+			try {
+				
+			System.out.println(message);
+			finalDouble = input.nextDouble();
+			correct = true;
+			
+			}catch(InputMismatchException e) {
+				System.out.println("El tipo de dato introducido no es correcto.");
+			}
+			input.nextLine(); //We clean the buffer so we can introduce the data again.
+		}while(!correct);
+			
+		return finalDouble;
+	}
+	
+	//READ CHAR
+	public static char readChar(String message) {
+		
+		boolean correct = false;
+		char finalChar = 0;
+		
+		//It will keep asking for a character until the type of data is correctly typed.
+		do {
+			try {
+			System.out.println(message);
+			finalChar = input.nextLine().charAt(0);
+			correct = true;
+			
+			}catch(InputMismatchException e) {
+				System.out.println("El tipo de dato introducido no es correcto.");
+			}catch(Exception e) {
+				System.out.println(e.toString());
+			}
+		}while(!correct);
+			
+		return finalChar;
+	}
+	
+	//READ STRING
+		public static String readString(String message) {
 			
 			boolean correct = false;
-			double finalDouble = 0;
+			String finalString = "";
 			
-			//It will keep asking for a double until the type of data is correctly typed.
+			//It will keep asking for a String until the type of data is correctly typed.
 			do {
 				try {
-					
 				System.out.println(message);
-				finalDouble = input.nextDouble();
+				finalString = input.nextLine();
 				correct = true;
 				
-				}catch(InputMismatchException e) {
-					System.out.println("El tipo de dato introducido no es correcto.");
-					input.nextLine(); //We clean the buffer so we can introduce the data again.
+				}catch(Exception e) {
+					System.out.println("Ha habido un error al introducir el String.");
 				}
 			}while(!correct);
 				
-			return finalDouble;
+			return finalString;
 		}
-	
-		
 	
 }

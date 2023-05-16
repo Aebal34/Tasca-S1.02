@@ -25,6 +25,13 @@ public class App {
 		
 		System.out.println("La cantidad a pagar será de "+price*ammount+"€.");
 		
+		//Input.readChar test
+		System.out.println("La primera letra de su nombre es... "+Input.readChar("Introduzca su nombre"));
+		
+		//Input.readString test
+		String dni = Input.readString("Introduzca su DNI: ");
+		System.out.println("Su DNI es: "+dni);
+		
 	}
 
 }
