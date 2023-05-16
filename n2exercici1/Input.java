@@ -5,6 +5,7 @@ public class Input {
 
 	static Scanner input = new Scanner(System.in);
 	
+	//READ BYTE
 	public static byte readByte(String message) {
 		
 		boolean correct = false;
@@ -27,5 +28,5 @@ public class Input {
 		return finalByte;
 	}
 	
-	
+	//
 }
