@@ -19,6 +19,12 @@ public class App {
 		
 		System.out.println("El áera del rectángulo es "+base*height+".");
 		
+		//Input.readDouble test
+		double price = Input.readDouble("Introduzca el precio del kg de naranjas.");
+		double ammount = Input.readDouble("Introduzca la cantidad de kg de naranjas.");
+		
+		System.out.println("La cantidad a pagar será de "+price*ammount+"€.");
+		
 	}
 
 }
