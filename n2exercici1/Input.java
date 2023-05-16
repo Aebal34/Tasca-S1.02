@@ -51,5 +51,28 @@ public class Input {
 		return finalInt;
 	}
 	
+	//READ FLOAT
+	public static float readFloat(String message) {
+		
+		boolean correct = false;
+		float finalFloat = 0;
+		
+		//It will keep asking for a float until the type of data is correctly typed.
+		do {
+			try {
+				
+			System.out.println(message);
+			finalFloat = input.nextFloat();
+			correct = true;
+			
+			}catch(InputMismatchException e) {
+				System.out.println("El tipo de dato introducido no es correcto.");
+				input.nextLine(); //We clean the buffer so we can introduce the data again.
+			}
+		}while(!correct);
+			
+		return finalFloat;
+	}
+	
 	
 }

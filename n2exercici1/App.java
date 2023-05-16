@@ -13,7 +13,11 @@ public class App {
 		
 		System.out.println("La suma de ambos números es "+(num1+num2)+".");
 		
+		//Input.readFloat test
+		float base = Input.readFloat("Introduzca la base del rectángulo.");
+		float height = Input.readFloat("Introduzca la altura del rectángulo.");
 		
+		System.out.println("El áera del rectángulo es "+base*height+".");
 		
 	}
 
