@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class SeatManager {
 
 	//ATTRIBUTES
-	ArrayList<Seat> seats;
+	private ArrayList<Seat> seats;
 	
 	//CONSTRUCTOR
 	public SeatManager() {
@@ -33,7 +33,6 @@ public class SeatManager {
 	public void removeSeat(int row, int seat) throws EmptySeatException{
 		
 		try {
-			Seat seatToRemove = seats.get(searchSeat(row, seat));
 			seats.remove(searchSeat(row, seat));
 		}catch(IndexOutOfBoundsException e) { //If searchSeat returns -1 (seat not found)
 			throw new EmptySeatException("The seat is empty. Cannot be removed.");

@@ -4,6 +4,9 @@ public class App {
 
 	public static void main(String[] args) {
 		
+		Cinema cinesa = new Cinema();
+		
+		cinesa.start();
 
 	}
 

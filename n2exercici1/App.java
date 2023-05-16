@@ -3,7 +3,7 @@ package n2exercici1;
 public class App {
 
 	public static void main(String[] args) {
-		
+		/*
 		//Input.readByte test
 		System.out.println("Tiene usted..."+Input.readByte("Introduzca su edad.")+" años");
 		
@@ -27,7 +27,7 @@ public class App {
 		
 		//Input.readChar test
 		System.out.println("La primera letra de su nombre es... "+Input.readChar("Introduzca su nombre"));
-		
+		*/
 		//Input.readString test
 		String dni = Input.readString("Introduzca su DNI: ");
 		System.out.println("Su DNI es: "+dni);
