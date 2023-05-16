@@ -42,13 +42,5 @@ public class App {
 		}catch(IndexOutOfBoundsException e) {
 			System.out.println(e.getMessage());
 		}
-		
-		
-
-		
-		
-		
-
 	}
-
 }
