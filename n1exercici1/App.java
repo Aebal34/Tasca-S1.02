@@ -32,8 +32,16 @@ public class App {
 			System.out.println(e.getMessage());
 		}
 		
-		//Demonstration of try-catch ArrayIndexOutOfBoundsException
+		//Demonstration of try-catch IndexOutOfBoundsException
 		
+		try {
+			System.out.println("We try to get into the name of index 0 of the firstSale products ArrayList.");
+			System.out.println(firstSale.getProducts().get(0).getName());
+			System.out.println("Now we try to get into the name of index 5 of the firstSale products ArrayList.");
+			System.out.println(firstSale.getProducts().get(5).getName());
+		}catch(IndexOutOfBoundsException e) {
+			System.out.println(e.getMessage());
+		}
 		
 		
 
