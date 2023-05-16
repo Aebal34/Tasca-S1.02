@@ -121,24 +121,51 @@ public class Input {
 	}
 	
 	//READ STRING
-		public static String readString(String message) {
+	public static String readString(String message) {
+		
+		boolean correct = false;
+		String finalString = "";
+		
+		//It will keep asking for a String until the type of data is correctly typed.
+		do {
+			try {
+			System.out.println(message);
+			finalString = input.nextLine();
+			correct = true;
 			
-			boolean correct = false;
-			String finalString = "";
+			}catch(Exception e) {
+				System.out.println("Ha habido un error al introducir el String.");
+			}
+		}while(!correct);
 			
-			//It will keep asking for a String until the type of data is correctly typed.
-			do {
-				try {
-				System.out.println(message);
-				finalString = input.nextLine();
-				correct = true;
-				
-				}catch(Exception e) {
-					System.out.println("Ha habido un error al introducir el String.");
-				}
-			}while(!correct);
-				
-			return finalString;
-		}
+		return finalString;
+	}
 	
+	//READ YES-NO
+	
+	public static boolean readYesOrNo(String message) {
+		
+		boolean correct = false;
+		String yesOrNo = "";
+		boolean yn = false;
+		
+		do {
+			try {
+				System.out.println(message);
+				yesOrNo = input.nextLine().toLowerCase();
+				if(yesOrNo.charAt(0) == 'y') {
+					yn = true;
+					correct = true;
+				}else if(yesOrNo.charAt(0) == 'n'){
+					yn = false;
+					correct = true;
+				}else {
+					System.out.println("Input is not valid.");
+				}
+			}catch(Exception e) {
+				System.out.println("Ha habido un error al introducir el String.");
+			}
+		}while(!correct);
+		return yn;
+	}
 }

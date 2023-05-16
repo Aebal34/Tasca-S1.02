@@ -32,6 +32,9 @@ public class App {
 		String dni = Input.readString("Introduzca su DNI: ");
 		System.out.println("Su DNI es: "+dni);
 		
+		//Input.YesOrNo test
+		Input.readYesOrNo("¿Te gusta programar? Y/N");
+		
 	}
 
 }
