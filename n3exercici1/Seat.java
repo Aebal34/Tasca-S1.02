@@ -28,8 +28,8 @@ public class Seat {
 	
 	//METHODS
 	
-	public boolean equals() {
-		return row == seat;
+	public boolean equals(Seat otherSeat) {
+		return (row == otherSeat.getRow() && seat == otherSeat.getSeat());
 	}
 
 	@Override
