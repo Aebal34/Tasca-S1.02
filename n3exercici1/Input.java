@@ -14,11 +14,9 @@ public class Input {
 		//It will keep asking for a byte until the type of data is correctly typed.
 		do {
 			try {
-				
 			System.out.println(message);
 			finalByte = input.nextByte();
 			correct = true;
-			
 			}catch(InputMismatchException e) {
 				System.out.println("El tipo de dato introducido no es correcto.");
 			}

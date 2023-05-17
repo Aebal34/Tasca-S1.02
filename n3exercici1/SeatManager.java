@@ -21,12 +21,12 @@ public class SeatManager {
 	public void addSeat(Seat seat) throws OccupiedSeatException {
 
 		try { 
-
 			if(seat.equals(seats.get(searchSeat(seat.getRow(), seat.getSeat())))) {
 				throw new OccupiedSeatException("The seat is occupied. Cannot be added.");
 			}
 		}catch(IndexOutOfBoundsException e) { //If searchSeat returns -1 (seat not found)
 			seats.add(seat);
+			System.out.println("The seat has been added properly.");
 		}
 	}
 	
@@ -34,6 +34,7 @@ public class SeatManager {
 		
 		try {
 			seats.remove(searchSeat(row, seat));
+			System.out.println("The seat row "+row+" and number "+seat+" have been correctly removed.");
 		}catch(IndexOutOfBoundsException e) { //If searchSeat returns -1 (seat not found)
 			throw new EmptySeatException("The seat is empty. Cannot be removed.");
 		}
@@ -49,6 +50,8 @@ public class SeatManager {
 				if(row == seats.get(counter).getRow() && seat == seats.get(counter).getSeat()) {
 					index = counter;
 					flag = true;
+				}else {
+					counter++;
 				}
 			}
 		}catch(IndexOutOfBoundsException e) {

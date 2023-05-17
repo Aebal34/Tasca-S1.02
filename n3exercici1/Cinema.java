@@ -56,7 +56,7 @@ public class Cinema {
 	public int insertSeatNumber() throws IncorrectSeatNumberException{
 		int seatNumber = Input.readInt("Insert seat number:");
 		if (seatNumber < 1 || seatNumber > seatsPerRow) {
-			throw new IncorrectSeatNumberException("Inserted row does not exist.");
+			throw new IncorrectSeatNumberException("Inserted seat does not exist.");
 		}
 		return seatNumber;
 	}
@@ -75,7 +75,7 @@ public class Cinema {
 			seatManager.addSeat(new Seat(insertRow(), insertSeatNumber(), insertPerson()));
 		} catch (OccupiedSeatException | IncorrectRowException | IncorrectSeatNumberException
 				| IncorrectPersonNameException e) {
-			e.getMessage();
+			System.out.println(e.getMessage());
 		}
 	}
 	
@@ -83,7 +83,7 @@ public class Cinema {
 		try {
 			seatManager.removeSeat(insertRow(), insertSeatNumber());
 		} catch (EmptySeatException | IncorrectRowException | IncorrectSeatNumberException e) {
-			e.getMessage();
+			System.out.println(e.getMessage());
 		}
 	}
 	
@@ -94,7 +94,7 @@ public class Cinema {
 					seatManager.getSeats().remove(i);
 				}
 			} catch (IncorrectPersonNameException e) {
-				e.getMessage();
+				System.out.println(e.getMessage());
 			}
 		}
 	}
@@ -109,9 +109,9 @@ public class Cinema {
 					break;
 				case 2:
 				try {
-					showReservedSeatsByPerson(Input.readString(insertPerson()));
+					showReservedSeatsByPerson((insertPerson()));
 				} catch (IncorrectPersonNameException e) {
-					e.getMessage();
+					System.out.println(e.getMessage());
 				}
 					break;
 				case 3:
